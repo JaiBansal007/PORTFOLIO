@@ -1,0 +1,174 @@
+{
+  "personal": {
+    "name": "Alex Carter",
+    "title": "Full Stack Developer",
+    "tagline": "Building elegant solutions to complex problems",
+    "email": "alex@example.com",
+    "phone": "+1 (555) 123-4567",
+    "location": "San Francisco, CA",
+    "avatar": "",
+    "resumeUrl": "#",
+    "social": {
+      "github": "https://github.com",
+      "linkedin": "https://linkedin.com",
+      "twitter": "https://twitter.com",
+      "instagram": ""
+    }
+  },
+  "about": {
+    "bio": "I'm a passionate full-stack developer with 5+ years of experience crafting high-performance web applications. I love turning complex problems into clean, intuitive digital experiences. When I'm not coding, you'll find me hiking trails, reading sci-fi, or experimenting with generative art.",
+    "highlights": [
+      "5+ Years of Experience",
+      "20+ Projects Delivered",
+      "10+ Happy Clients",
+      "3 Open Source Contributions"
+    ]
+  },
+  "skills": [
+    { "category": "Frontend", "items": ["React", "Next.js", "TypeScript", "Vue.js", "Tailwind CSS", "Three.js"] },
+    { "category": "Backend", "items": ["Node.js", "Python", "FastAPI", "GraphQL", "REST APIs", "PostgreSQL"] },
+    { "category": "DevOps & Cloud", "items": ["Docker", "AWS", "Vercel", "CI/CD", "Kubernetes", "Terraform"] },
+    { "category": "Tools", "items": ["Git", "Figma", "VS Code", "Postman", "Jira", "Linux"] }
+  ],
+  "projects": [
+    {
+      "title": "NexusMind AI Platform",
+      "description": "An AI-powered SaaS platform for semantic search and document intelligence. Processes 1M+ documents with sub-second query response times.",
+      "tags": ["Next.js", "Python", "FastAPI", "OpenAI", "PostgreSQL", "AWS"],
+      "liveUrl": "#",
+      "githubUrl": "#",
+      "featured": true
+    },
+    {
+      "title": "QuantumStore E-Commerce",
+      "description": "A headless e-commerce solution with real-time inventory management, multi-currency support, and blazing-fast performance achieving 99 Lighthouse scores.",
+      "tags": ["React", "Node.js", "Stripe", "Redis", "MongoDB"],
+      "liveUrl": "#",
+      "githubUrl": "#",
+      "featured": true
+    },
+    {
+      "title": "CryptoVault Dashboard",
+      "description": "A real-time crypto portfolio tracker with advanced charting, automated alerts, and multi-exchange API integration supporting 200+ coins.",
+      "tags": ["Vue.js", "WebSocket", "D3.js", "Express", "Docker"],
+      "liveUrl": "#",
+      "githubUrl": "#",
+      "featured": true
+    },
+    {
+      "title": "DevCollab — Remote IDE",
+      "description": "A cloud-based collaborative IDE enabling real-time pair programming, code reviews, and integrated video calling for remote teams.",
+      "tags": ["React", "WebRTC", "Socket.io", "Monaco Editor", "AWS"],
+      "liveUrl": "#",
+      "githubUrl": "#",
+      "featured": false
+    },
+    {
+      "title": "EcoTrack Carbon Monitor",
+      "description": "An enterprise carbon footprint tracking tool with ESG reporting, integrations with IoT sensors, and AI-driven reduction recommendations.",
+      "tags": ["Next.js", "Python", "IoT", "Chart.js", "PostgreSQL"],
+      "liveUrl": "#",
+      "githubUrl": "#",
+      "featured": false
+    },
+    {
+      "title": "HealthPulse Telehealth",
+      "description": "A HIPAA-compliant telehealth platform enabling secure video consultations, e-prescriptions, and patient records management.",
+      "tags": ["React Native", "Node.js", "Twilio", "MongoDB", "AWS"],
+      "liveUrl": "#",
+      "githubUrl": "#",
+      "featured": false
+    }
+  ],
+  "experience": [
+    {
+      "role": "Senior Full Stack Engineer",
+      "company": "Nexus Technologies",
+      "period": "2022 – Present",
+      "location": "San Francisco, CA",
+      "description": "Led a team of 6 engineers to architect and deliver a multi-tenant SaaS platform serving 50K+ users. Reduced API latency by 40% through caching strategies and query optimization.",
+      "highlights": ["Led team of 6 engineers", "50K+ active users", "40% latency reduction"]
+    },
+    {
+      "role": "Full Stack Developer",
+      "company": "Pixel Labs",
+      "period": "2020 – 2022",
+      "location": "Remote",
+      "description": "Built and maintained 10+ client projects ranging from e-commerce stores to data analytics dashboards. Implemented CI/CD pipelines reducing deployment time by 60%.",
+      "highlights": ["10+ client projects", "60% faster deployments", "Full-stack ownership"]
+    },
+    {
+      "role": "Frontend Developer",
+      "company": "StartupXYZ",
+      "period": "2019 – 2020",
+      "location": "New York, NY",
+      "description": "Developed the core frontend of a fintech app from scratch using React. Collaborated closely with UX designers to deliver pixel-perfect, accessible interfaces.",
+      "highlights": ["Greenfield React app", "Fintech domain", "Accessibility focused"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.Sc. Computer Science",
+      "institution": "University of California, Berkeley",
+      "period": "2015 – 2019",
+      "description": "Graduated with honors. Specialized in Distributed Systems and Machine Learning. Won 1st place at the annual HackBerkeley hackathon.",
+      "gpa": "3.9 / 4.0"
+    },
+    {
+      "degree": "AWS Solutions Architect — Professional",
+      "institution": "Amazon Web Services",
+      "period": "2021",
+      "description": "Certified in designing distributed systems and cloud-native architectures on AWS.",
+      "gpa": ""
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Sarah Mitchell",
+      "title": "CTO at Nexus Technologies",
+      "avatar": "",
+      "text": "Alex is one of the most talented engineers I've worked with. Their ability to break down complex problems and deliver clean, scalable solutions is truly remarkable. A genuine team leader.",
+      "rating": 5
+    },
+    {
+      "name": "James Okafor",
+      "title": "Founder at QuantumStore",
+      "avatar": "",
+      "text": "Working with Alex transformed our e-commerce platform. They delivered beyond our expectations — on time, under budget, and with stellar code quality. Highly recommended!",
+      "rating": 5
+    },
+    {
+      "name": "Priya Nair",
+      "title": "Product Lead at Pixel Labs",
+      "avatar": "",
+      "text": "Alex has an exceptional eye for detail and bridges the gap between design and engineering beautifully. Our product's quality jumped significantly when they joined the team.",
+      "rating": 5
+    }
+  ],
+  "blog": [
+    {
+      "title": "Why I Switched from REST to GraphQL (And When to Go Back)",
+      "excerpt": "After 3 years of GraphQL in production, here's my honest take on when it shines and when it becomes a burden — with real-world examples.",
+      "date": "2024-06-10",
+      "tags": ["GraphQL", "API Design", "Backend"],
+      "readTime": "8 min read",
+      "url": "#"
+    },
+    {
+      "title": "Building a 99-Score Lighthouse App with Next.js",
+      "excerpt": "A deep dive into the performance techniques, image optimizations, and code-splitting strategies that helped me achieve perfect Lighthouse scores.",
+      "date": "2024-04-22",
+      "tags": ["Next.js", "Performance", "Web Vitals"],
+      "readTime": "12 min read",
+      "url": "#"
+    },
+    {
+      "title": "Microservices vs Monolith: A Pragmatic Guide for Startups",
+      "excerpt": "Stop blindly following trends. Here's a framework for choosing the right architecture based on your team size, budget, and growth stage.",
+      "date": "2024-02-14",
+      "tags": ["Architecture", "Microservices", "Engineering"],
+      "readTime": "10 min read",
+      "url": "#"
+    }
+  ]
+}
