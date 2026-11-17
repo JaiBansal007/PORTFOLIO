@@ -33,6 +33,7 @@ export function OrbitingCircles({
     <div
       className={cn("absolute inset-0 flex items-center justify-center", className)}
       style={{ pointerEvents: "none" }}
+      aria-hidden="true"
     >
       {/* Orbit path circle */}
       {path && (
@@ -55,7 +56,6 @@ export function OrbitingCircles({
       )}
 
       {items.map((child, i) => {
-        const angle = (360 / count) * i;
         const delayFraction = -(calculatedDuration / count) * i;
         return (
           <div

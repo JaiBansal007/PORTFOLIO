@@ -3,11 +3,11 @@ import { NumberTicker } from "@/registry/magicui/number-ticker";
 
 export default function About({ about }: { about: AboutType }) {
   return (
-    <section id="about" className="section">
+    <section id="about" className="section" aria-labelledby="about-heading">
       <div className="container">
         <div className="section-header reveal">
           <span className="section-label">About Me</span>
-          <h2 className="section-title">Who I Am</h2>
+          <h2 className="section-title" id="about-heading">Who I Am</h2>
         </div>
 
         <div className="about-grid">
@@ -29,12 +29,15 @@ export default function About({ about }: { about: AboutType }) {
                 return (
                   <div className="highlight-card" key={i}>
                     <span className="highlight-num">
-                      <NumberTicker
-                        value={num}
-                        delay={i * 0.15}
-                        className="highlight-num"
-                      />
-                      {suffix}
+                      <span aria-hidden="true">
+                        <NumberTicker
+                          value={num}
+                          delay={i * 0.15}
+                          className="highlight-num"
+                        />
+                        {suffix}
+                      </span>
+                      <span className="sr-only">{num}{suffix}</span>
                     </span>
                     <span className="highlight-label">{label}</span>
                   </div>

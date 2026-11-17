@@ -25,17 +25,38 @@ export function NumberTicker({
     const el = ref.current;
     if (!el) return;
 
+    if (!("IntersectionObserver" in window)) {
+      el.textContent = value.toFixed(decimalPlaces);
+      return;
+    }
+
+    let timeout: ReturnType<typeof setTimeout> | undefined;
+    let cancelAnimation: (() => void) | undefined;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && !started.current) {
           started.current = true;
-          setTimeout(() => animate(el, value, direction, decimalPlaces), delay * 1000);
+          if (reducedMotion) {
+            el.textContent = value.toFixed(decimalPlaces);
+          } else {
+            timeout = setTimeout(
+              () => {
+                cancelAnimation = animate(el, value, direction, decimalPlaces);
+              },
+              delay * 1000
+            );
+          }
         }
       },
       { threshold: 0.3 }
     );
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (timeout) clearTimeout(timeout);
+      cancelAnimation?.();
+    };
   }, [value, direction, delay, decimalPlaces]);
 
   return (
@@ -43,7 +64,7 @@ export function NumberTicker({
       ref={ref}
       className={cn("tabular-nums", className)}
     >
-      {direction === "down" ? value : 0}
+      {value.toFixed(decimalPlaces)}
     </span>
   );
 }
@@ -61,14 +82,16 @@ function animate(
 
   const easeOut = (t: number) => 1 - Math.pow(1 - t, 3);
 
+  let frameId: number;
   const tick = (now: number) => {
     const elapsed = now - start;
     const progress = Math.min(elapsed / duration, 1);
     const current = from + (to - from) * easeOut(progress);
     el.textContent = current.toFixed(decimalPlaces);
-    if (progress < 1) requestAnimationFrame(tick);
+    if (progress < 1) frameId = requestAnimationFrame(tick);
     else el.textContent = target.toFixed(decimalPlaces);
   };
 
-  requestAnimationFrame(tick);
+  frameId = requestAnimationFrame(tick);
+  return () => cancelAnimationFrame(frameId);
 }

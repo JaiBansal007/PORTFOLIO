@@ -1,8 +1,10 @@
-export interface Social {
+interface Social {
   github?: string;
   linkedin?: string;
   twitter?: string;
   instagram?: string;
+  codeforces?: string;
+  atcoder?: string;
 }
 
 export interface Personal {
@@ -53,6 +55,13 @@ export interface Education {
   gpa: string;
 }
 
+export interface Hackathon {
+  name: string;
+  organizer: string;
+  result: string;
+  description: string;
+}
+
 export interface Testimonial {
   name: string;
   title: string;
@@ -77,6 +86,7 @@ export interface PortfolioData {
   projects: Project[];
   experience: Experience[];
   education: Education[];
+  hackathons: Hackathon[];
   testimonials: Testimonial[];
   blog: BlogPost[];
 }

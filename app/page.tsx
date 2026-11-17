@@ -5,6 +5,7 @@ import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
+import Hackathons from "@/components/Hackathons";
 import Testimonials from "@/components/Testimonials";
 import Blog from "@/components/Blog";
 import Contact from "@/components/Contact";
@@ -16,13 +17,22 @@ export default function Home() {
 
   return (
     <>
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
       <div className="bg-grid" aria-hidden="true" />
-      <Navbar personal={data.personal} />
-      <main>
+      <Navbar
+        personal={data.personal}
+        hasHackathons={data.hackathons.length > 0}
+        hasTestimonials={data.testimonials.length > 0}
+        hasBlog={data.blog.length > 0}
+      />
+      <main id="main-content" tabIndex={-1}>
         <Hero personal={data.personal} />
         <About about={data.about} />
         <Skills skills={data.skills} />
         <Projects projects={data.projects} />
+        <Hackathons hackathons={data.hackathons} />
         <Experience experience={data.experience} education={data.education} />
         <Testimonials testimonials={data.testimonials} />
         <Blog posts={data.blog} />
