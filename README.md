@@ -17,6 +17,10 @@ Edit [`data/portfolio.json`](./data/portfolio.json) to update the personal detai
 
 The contact form opens a prefilled message in the visitor's email app; it does not send or store messages on the site.
 
+## SEO and social sharing
+
+The canonical site URL and shared metadata are defined in [`lib/site.ts`](./lib/site.ts). Update `SITE_URL` if the production domain changes. The App Router generates the sitemap, robots file, web manifest, branded favicon, and Open Graph image from files in `app/`.
+
 ## Verify
 
 ```bash

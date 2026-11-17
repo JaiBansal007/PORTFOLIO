@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { getPortfolioData } from "@/lib/data";
+import {
+  SITE_DESCRIPTION,
+  SITE_KEYWORDS,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/site";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const spaceGrotesk = Space_Grotesk({
@@ -13,17 +19,32 @@ const jetBrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
 });
 
-export async function generateMetadata(): Promise<Metadata> {
+export function generateMetadata(): Metadata {
   const data = getPortfolioData();
+  const title = "Jai Bansal | Full-Stack Developer & NSUT";
+
   return {
-    title: `${data.personal.name} — ${data.personal.title}`,
-    description: data.about.bio,
-    keywords: ["portfolio", data.personal.name, data.personal.title, ...data.skills.flatMap(s => s.items)],
+    metadataBase: new URL(SITE_URL),
+    title,
+    description: SITE_DESCRIPTION,
+    keywords: SITE_KEYWORDS,
+    alternates: {
+      canonical: "/",
+    },
     authors: [{ name: data.personal.name }],
     openGraph: {
-      title: `${data.personal.name} — ${data.personal.title}`,
-      description: data.about.bio,
+      title,
+      description: SITE_DESCRIPTION,
       type: "website",
+      url: SITE_URL,
+      siteName: SITE_NAME,
+      locale: "en_US",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: SITE_DESCRIPTION,
+      images: ["/opengraph-image"],
     },
   };
 }

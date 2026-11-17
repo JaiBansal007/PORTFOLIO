@@ -11,12 +11,59 @@ import Blog from "@/components/Blog";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 
 export default function Home() {
   const data = getPortfolioData();
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": `${SITE_URL}/#person`,
+        name: data.personal.name,
+        url: SITE_URL,
+        jobTitle: "Computer Science Student",
+        description: SITE_DESCRIPTION,
+        image: `${SITE_URL}/opengraph-image`,
+        affiliation: {
+          "@type": "CollegeOrUniversity",
+          name: "Netaji Subhas University of Technology",
+        },
+        sameAs: Object.values(data.personal.social).filter(
+          (url): url is string => Boolean(url)
+        ),
+        knowsAbout: data.skills.flatMap((skill) => skill.items),
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        name: SITE_NAME,
+        url: SITE_URL,
+        description: SITE_DESCRIPTION,
+        inLanguage: "en",
+        publisher: { "@id": `${SITE_URL}/#person` },
+      },
+      ...data.projects.map((project) => ({
+        "@type": "CreativeWork",
+        name: project.title,
+        description: project.description,
+        keywords: project.tags,
+        url: project.liveUrl || project.githubUrl,
+        author: { "@id": `${SITE_URL}/#person` },
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+      })),
+    ],
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+        }}
+      />
       <a className="skip-link" href="#main-content">
         Skip to main content
       </a>
